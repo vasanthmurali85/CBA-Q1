@@ -31,10 +31,10 @@ public class readexcel {
 			String data = myReader.nextLine();
 			if (!data.contains("record"))
 			{
-				
-				parts = data.split(" +", 2);			
+				data.replaceAll("^\"|\"$", "");
+				parts = data.split(" +");			
 				String key = parts[0].trim();
-				String value = parts[1].trim();
+				String value = parts[1].trim();				
 				map.put(key, value);
 			}
 			else
@@ -59,5 +59,6 @@ public class readexcel {
 		}
 		
 	}
+	
 
 
